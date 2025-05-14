@@ -5,24 +5,26 @@ public class Client {
 
         StudentRegistry studentRegistry = new StudentRegistry();
         fillRegistry(studentRegistry);
-        //The clone() method is called after fetching the Student object from the registry.
-        Student aman = studentRegistry.get("batch").clone();
-        aman.setName("Aman");
-        aman.setAge(22);
-        aman.setPsp(75.0);
 
-        Student aman2 = studentRegistry.get("batch").clone();
-        aman2.setName("Avi");
-        aman2.setAge(22);
-        aman2.setPsp(75.0);
+        Student student = studentRegistry.getStudent("batch1").clone();
+        student.setName("Aman");
+        student.setAge(26);
+        Student student2 = studentRegistry.getStudent("batch2").clone();
+        student2.setName("Aman is Intelligent");
+        System.out.println("DEBUG");
     }
+
     private static void fillRegistry(StudentRegistry studentRegistry) {
+            //1. Create Prototype object for every batch
+            Student batch1 = new Student();
+            batch1.setName("batch1");
+            batch1.setAvgBatchPsp(75.0);
+            studentRegistry.register("batch1", batch1);
 
-        //Create prototype object
-        Student batch = new Student();
-        batch.setName("BATCH1");
-        batch.setAvgBatchPsp(75.0);
-
-        studentRegistry.register("batch", batch);
+            IntellijectStudent batch2 = new IntellijectStudent();
+            batch2.setName("batch2");
+            batch2.setAvgBatchPsp(90.0);
+            studentRegistry.register("batch2", batch2);
+        }
     }
-}
+

@@ -1,6 +1,6 @@
 package dev.aman.Prototype;
 
-public class Student implements Prototype<Object> {
+public class Student implements Prototypes<Student> {
 
     private String name;
     private int age;
@@ -12,11 +12,11 @@ public class Student implements Prototype<Object> {
     public Student clone() {
 
         Student student = new Student();
-        student.name = this.name;
-        student.age = this.age;
-        student.batch = this.batch;
-        student.psp = this.psp;
-        student.avgBatchPsp = this.avgBatchPsp;
+        student.name = name;
+        student.age = age;
+        student.batch = batch;
+        student.psp = psp;
+        student.avgBatchPsp = avgBatchPsp;
         return student;
     }
 
@@ -60,3 +60,4 @@ public class Student implements Prototype<Object> {
         this.avgBatchPsp = avgBatchPsp;
     }
 }
+

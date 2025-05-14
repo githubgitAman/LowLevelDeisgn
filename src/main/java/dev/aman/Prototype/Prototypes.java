@@ -1,5 +1,6 @@
 package dev.aman.Prototype;
 
-public interface Prototype<T> {
+public interface Prototypes<T> {
+
     T clone();
 }

@@ -1,18 +1,18 @@
 package dev.aman.Prototype;
 
 import java.util.HashMap;
-import java.util.Map;
 
+//Student Registry where all object are stored
+//Inside registry the object that we need to clone is stored
 public class StudentRegistry {
-
-    private Map<String, Student> studentMap = new HashMap<>();
-
-    //Creating prototype object
-    public void register(String key, Student student) {
-        studentMap.put(key, student);
+    //Created map to store key and object
+    private HashMap<String, Student> students = new HashMap<>();
+    //Method to store prototype objects
+    void register(String key, Student student) {
+        students.put(key, student);
     }
-    //Returning prototype object
-    public Student get(String key) {
-        return studentMap.get(key);
+    //Methods to get prototype objects
+    public Student getStudent(String key) {
+        return students.get(key);
     }
 }
